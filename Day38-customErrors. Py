@@ -1,0 +1,20 @@
+# Custom Error Challenge by The-Coder-Vansh
+age_input = input("Enter your age (or 'quit' to exit): ")
+
+if age_input == "quit":
+    print("bye, byeee! have a nice day")
+else:
+    try:
+        age = int(age_input) # Yahan string ko number mein badla
+        
+        if age <= 12:
+            raise ValueError("You are under 12, you are small!")
+        elif age >= 13 and age <= 100:
+            print("👋 hey!!, welcome to the python world")
+        else:
+            print("Age out of range!")
+            
+    except ValueError as e:
+        # Agar age choti hai toh hamara custom message dikhega
+        # Agar user ne 'abcd' dala toh bhi yahi handle hoga
+        print("Error details:", e)
