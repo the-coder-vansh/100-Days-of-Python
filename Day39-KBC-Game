@@ -1,0 +1,36 @@
+# KBC Game by The-Coder-Vansh
+questions = [
+    ["What is the capital of India?", "Mumbai", "New Delhi", "Chennai", "Kolkata", "b"],
+    ["Which is the largest ocean?", "Atlantic", "Indian", "Pacific", "Arctic", "c"],
+    ["National animal of India?", "Lion", "Tiger", "Elephant", "Leopard", "b"],
+    ["Chemical formula of Water?", "CO2", "O2", "H2O", "H2", "c"],
+    ["What is 2 + 2 * 2?", "8", "6", "4", "10", "b"]
+]
+
+levels = [1000, 2000, 3000, 5000, 10000]
+money = 0
+
+print("--- Welcome to Kaun Banega Crorepati ---")
+
+for i in range(len(questions)):
+    # Question aur Options print karna
+    print(f"\n\nQuestion for Rs. {levels[i]}:")
+    print(f"{questions[i][0]}")
+    print(f"a. {questions[i][1]}          b. {questions[i][2]}")
+    print(f"c. {questions[i][3]}          d. {questions[i][4]}")
+    
+    ans = input("Enter your answer (a/b/c/d) or 'q' to quit: ").lower()
+
+    if ans == 'q':
+        break
+        
+    # Check karna ki answer sahi hai ya nahi
+    if ans == questions[i][5]:
+        money = levels[i]
+        print(f"Correct Answer! You have won Rs. {money}")
+    else:
+        print("Wrong Answer!")
+        print(f"The correct answer was {questions[i][5]}")
+        break
+
+print(f"\nGame Over! You are taking home: Rs. {money}")
